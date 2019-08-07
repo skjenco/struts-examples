@@ -21,21 +21,33 @@ package org.demo;
 
 import com.opensymphony.xwork2.ActionSupport;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * <code>Set welcome message.</code>
  */
 public class ProduceAction extends ActionSupport {
 
-    private MyBean bean;
+    private List<MyBean> list;
 
     public String execute() throws Exception {
-        bean = new MyBean(2, Arrays.asList("Lukas", "Antonio"));
+        list = new ArrayList<MyBean>();
+        MyBean bean = new MyBean(2, Arrays.asList("Lukas", "Antonio"));
+        list.add(bean);
+        bean = new MyBean(2, Arrays.asList("Stephen", "Jensen"));
+        list.add(bean);
+        bean = new MyBean(2, Arrays.asList("Kirk", "Jensen"));
+        list.add(bean);
         return SUCCESS;
     }
 
-    public MyBean getBean() {
-        return bean;
+    public List<MyBean> getList() {
+        return list;
     }
+
+    //public MyBean getBean() {
+//        return bean;
+//    }
 }

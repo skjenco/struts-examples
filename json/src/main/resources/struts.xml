@@ -16,7 +16,7 @@
 
     <action name="produce" class="org.demo.ProduceAction">
       <result type="json">
-        <param name="root">bean</param>
+        <param name="root">list</param>
       </result>
     </action>
 
